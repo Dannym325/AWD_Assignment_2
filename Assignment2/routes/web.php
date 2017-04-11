@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('blogs', 'BlogsController@index');
+Route::get('blogs', 'BlogController@index');
