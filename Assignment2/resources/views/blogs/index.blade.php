@@ -14,13 +14,29 @@
     <body>
       <h1>Blogs</h1>
 
+      <table border="1">
+        <tr>
+          <th>Title</th>
+          <th>Content</th>
+          <th>User</th>
+          <th>View</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
       @foreach ($blogs as $blog)
         <div>
-            {{ $blog->title }}
-            {{ $blog->contents }}
-            {{ $blog->username }}
+            <tr>
+              <td> {{ $blog->title }} </td>
+              <td> {{ $blog->contents }} </td>
+              <td> {{ $blog->username }} </td>
+              <td> <p>View</p> </td>
+              <td> <p>Edit</p> </td>
+              <td> <p>Delete</p> </td>
+          </tr>
+
         </div>
       @endforeach
+      </table>
 
     </body>
 </html>
