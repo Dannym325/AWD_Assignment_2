@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('blogs', 'BlogController@index');
+
+Route::get('blogs/{blog}/delete', 'BlogController@delete');

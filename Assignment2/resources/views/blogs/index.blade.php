@@ -16,6 +16,7 @@
 
       <table border="1">
         <tr>
+          <th>ID </th> <!-- This can be deleted -->
           <th>Title</th>
           <th>Content</th>
           <th>User</th>
@@ -26,12 +27,13 @@
       @foreach ($blogs as $blog)
         <div>
             <tr>
+              <td> {{ $blog->id }} </td>
               <td> {{ $blog->title }} </td>
               <td> {{ $blog->contents }} </td>
               <td> {{ $blog->username }} </td>
               <td> <p>View</p> </td>
               <td> <p>Edit</p> </td>
-              <td> <p>Delete</p> </td>
+              <td> <a href="/blogs/{{ $blog->id }}/delete"> Delete </a> </td>
           </tr>
 
         </div>
