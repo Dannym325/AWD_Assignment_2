@@ -15,6 +15,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = DB::table('blogs')->get();
+        //$blogs = Blog::all();
 
         return view('blogs.index', compact('blogs'));
     }
@@ -40,5 +41,23 @@ class BlogController extends Controller
         );
 
         return back();  // redirect to the main blogs page?
+    }
+
+    public function update(Request $request)
+    {
+      return back();
+    }
+
+    public function edit(Blog $blog)
+    {
+      //return $blog->all();
+      return view('blogs.update', compact('blog'));
+    }
+
+    public function show($id)
+    {
+      $blog = Blog::find($id);
+
+      return view('blogs.view', compact('blog'));
     }
 }

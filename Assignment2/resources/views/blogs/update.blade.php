@@ -12,13 +12,16 @@
 
     </head>
     <body>
+      <p> {{ $blog->title }} </p>
       <form name="updateBlogFrm" action="" method="POST">
         {{ csrf_field() }} <!-- need to ask why it only works with this? -->
         {{ method_field('patch') }}
 
-        <p>Title:</p><input type="text" name="title">
-        <p>Content:</p><input type="text" name="content">
-        <p>Category:</p>
+        <textarea name="contents"> {{ $blog->id }} </textarea>
+        <textarea name="contents"> {{ $blog->title }} </textarea>
+        <textarea name="contents"> {{ $blog->content }} </textarea>
+        <textarea name="contents"> {{ $blog->username }} </textarea>
+
         <input type="submit" name="updateBlogSub" value="Update">
       </form>
     </body>
