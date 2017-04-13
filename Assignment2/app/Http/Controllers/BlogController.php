@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Blog;
 use DB;
-
 use Illuminate\Http\Request;
+use App\Http\Requests;
 
 class BlogController extends Controller
 {
@@ -25,14 +26,21 @@ class BlogController extends Controller
         return back();
     }
 
-    public function create($title, $content, $username)
+    public function create(Request $request)
     {
+
         $blog = new Blog();
 
-        $blog->title = $title;
-        $blog->contents = $contents;
-        $blog->username = $username;
+        $blog->title = $request->title;
+        $blog->content = $request->content;
+        $blog->username = $request->username;
+        //$blog->createdAt = date("Y-m-d h:i:sa");
 
-        $blog->save();
+        DB::table('blogs')->insert(
+          ['title' => $blog->title, 'contents' => $blog->content, 'username' => $blog->username ]
+        );
+
+        return $request->all();
+
     }
 }

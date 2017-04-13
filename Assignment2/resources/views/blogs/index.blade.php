@@ -13,6 +13,7 @@
     </head>
     <body>
       <h1>Blogs</h1>
+      <button type="button"><a href="/create">New Blog!</a></button>
 
       <table border="1">
         <tr>

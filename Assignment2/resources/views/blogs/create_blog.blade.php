@@ -12,12 +12,14 @@
 
     </head>
     <body>
-      <form name="createBlogFrm" action="" method="POST">
+      <form name="createBlogFrm" action="/create/new" method="POST">
+        {{ csrf_field() }} <!-- need to ask why it only works with this? -->
+
         <p>Title:</p><input type="text" name="title">
         <p>Content:</p><input type="text" name="content">
         <p>Category:</p>
-        <p> Username: (auto) </p><input type="text" name="name"> <!-- delete this when can enter user session -->
-        <input type="submit" name="loginSubmit" value="Log In">
+        <p> Username: (auto) </p><input type="text" name="username"> <!-- delete this when can enter user session -->
+        <input type="submit" name="createBlogSub" value="Add">
       </form>
     </body>
 </html>
