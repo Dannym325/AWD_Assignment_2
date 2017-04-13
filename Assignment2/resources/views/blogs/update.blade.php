@@ -13,14 +13,13 @@
     </head>
     <body>
       <p> {{ $blog->title }} </p>
-      <form name="updateBlogFrm" action="" method="POST">
+      <form name="updateBlogFrm" action="/blogs/{{ $blog->id }}" method="POST">
         {{ csrf_field() }} <!-- need to ask why it only works with this? -->
-        {{ method_field('patch') }}
+        {{ method_field('PATCH') }}
 
-        <textarea name="contents"> {{ $blog->id }} </textarea>
-        <textarea name="contents"> {{ $blog->title }} </textarea>
-        <textarea name="contents"> {{ $blog->content }} </textarea>
-        <textarea name="contents"> {{ $blog->username }} </textarea>
+        <textarea name="id">{{ $blog->id }}</textarea> <!-- THIS NEEDS TO BE REMOVED (OR HIDDEN) -->
+        <textarea name="title">{{ $blog->title }}</textarea>
+        <textarea name="contents">{{ $blog->contents }}</textarea>
 
         <input type="submit" name="updateBlogSub" value="Update">
       </form>

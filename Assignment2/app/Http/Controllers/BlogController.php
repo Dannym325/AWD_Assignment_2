@@ -43,14 +43,26 @@ class BlogController extends Controller
         return back();  // redirect to the main blogs page?
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
+      $newTitle = $request->title;
+      $newContent = $request->contents;
+
+      DB::table('blogs') // update the title
+                  ->where('id', $id)
+                  ->update(array('title' => $newTitle));
+
+      DB::table('blogs') // update the content
+                    ->where('id', $id)
+                    ->update(array('contents' => $newContent));
+
       return back();
     }
 
-    public function edit(Blog $blog)
+    public function edit($id)
     {
-      //return $blog->all();
+      $blog = DB::table('blogs')->where('id', $id)->first(); // missing attributes when you dont use a query?
+
       return view('blogs.update', compact('blog'));
     }
 
