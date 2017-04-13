@@ -14,6 +14,9 @@
     <body>
       <h1>ID: {{ $blog->id }}</h1>
       <h1>Title: {{ $blog->title }}</h1>
+      <h1>username: {{ $blog->username }}</h1>
+      <h1>contents: {{ $blog->contents }}</h1>
+      <h1>created at: {{ $blog->created_at }}</h1>
       <button type="button"><a href="/create">New Blog!</a></button>
 
 

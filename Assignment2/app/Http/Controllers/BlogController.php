@@ -56,8 +56,9 @@ class BlogController extends Controller
 
     public function show($id)
     {
-      $blog = Blog::find($id);
-
+      $blog = DB::table('blogs')->where('id', $id)->first(); // missing attributes when you dont use a query?
+      //$myBlog = Blog::find($blog);
+      //return $myBlog;
       return view('blogs.view', compact('blog'));
     }
 }
