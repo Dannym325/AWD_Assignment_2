@@ -28,7 +28,6 @@ class BlogController extends Controller
 
     public function create(Request $request)
     {
-
         $blog = new Blog();
 
         $blog->title = $request->title;
@@ -40,7 +39,6 @@ class BlogController extends Controller
           ['title' => $blog->title, 'contents' => $blog->content, 'username' => $blog->username, 'created_at' => $blog->createdAt ]
         );
 
-        return $request->all();
-
+        return back();  // redirect to the main blogs page?
     }
 }

@@ -24,3 +24,7 @@ Route::get('blogs', 'BlogController@index');
 Route::get('blogs/{blog}/delete', 'BlogController@delete');
 
 Route::post('/create/new', 'BlogController@create');
+
+Route::get('blogs/{blog}/edit', function() {
+  return view('blogs.update');
+});

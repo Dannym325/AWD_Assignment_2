@@ -33,7 +33,7 @@
               <td> {{ $blog->contents }} </td>
               <td> {{ $blog->username }} </td>
               <td> <p>View</p> </td>
-              <td> <p>Edit</p> </td>
+              <td> <a href="blogs/{{ $blog->id }}/edit"> Edit </a> </td>
               <td> <a href="/blogs/{{ $blog->id }}/delete"> Delete </a> </td>
           </tr>
 
