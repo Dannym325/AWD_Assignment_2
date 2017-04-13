@@ -34,10 +34,10 @@ class BlogController extends Controller
         $blog->title = $request->title;
         $blog->content = $request->content;
         $blog->username = $request->username;
-        //$blog->createdAt = date("Y-m-d h:i:sa");
+        $blog->createdAt = date("Y-m-d h:i:s");
 
         DB::table('blogs')->insert(
-          ['title' => $blog->title, 'contents' => $blog->content, 'username' => $blog->username ]
+          ['title' => $blog->title, 'contents' => $blog->content, 'username' => $blog->username, 'created_at' => $blog->createdAt ]
         );
 
         return $request->all();
