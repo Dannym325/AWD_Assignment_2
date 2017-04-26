@@ -74,4 +74,22 @@ class BlogController extends Controller
       //return $myBlog;
       return view('blogs.view', compact('blog'));
     }
+
+    /**
+    Method to pull all blogs of a certain category
+    */
+    public function filter(Request $request)
+    {
+      $catID = $request->input('filterSelect');
+
+      if($catID == 0) { // if 0 is passed, it will be all
+        return BlogController::index();
+      } else {
+        $blogs = DB::table('blogs')->where('categoryID', '=', $catID)->get();
+
+        return view('blogs.index', compact('blogs'));
+      }
+
+    }
+
 }

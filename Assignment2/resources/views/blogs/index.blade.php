@@ -18,15 +18,16 @@
       <button type="button"><a href="/create">New Blog!</a></button>
 
       <p> Filter by category: </p>
-    <form name="categoryFrm" action="" method="POST">
-      <select name="filerSelect">
-        <option value="all">All</option>
+    <form name="categoryFrm" action="/filter" method="POST">
+      <select name="filterSelect">
+        <option value="0">All</option>
         <option value="1">Cars</option>
         <option value="2">Day to day</option>
         <option value="3">Special Occasions</option>
         <option value="4">Other</option>
       </select>
-      <input type="submit" name="filerSub" value="Search">
+      <input type="hidden" name="_token" value="{{{ csrf_token() }}}" /> <!-- WHY? -->
+      <input type="submit" name="filterSub" value="Search">
     </form>
   </br></br>
 
@@ -36,6 +37,7 @@
           <th>Title</th>
           <th>Content</th>
           <th>User</th>
+          <th>CatID</th>
           <th>View</th>
           <th>Edit</th>
           <th>Delete</th>
@@ -47,6 +49,7 @@
               <td> {{ $blog->title }} </td>
               <td> {{ $blog->contents }} </td>
               <td> {{ $blog->username }} </td>
+              <td> {{ $blog->categoryID}} </td> <!-- Delete this -->
               <td> <a href="blogs/{{ $blog->id }}"> View </a> </td>
               <td> <a href="blogs/{{ $blog->id }}/edit"> Edit </a> </td>
               <td> <a href="/blogs/{{ $blog->id }}/delete"> Delete </a> </td>
