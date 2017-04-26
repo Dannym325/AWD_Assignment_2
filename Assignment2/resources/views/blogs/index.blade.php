@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- index.blade.php -->
+
 <html lang="{{ config('app.locale') }}">
     <head>
         <meta charset="utf-8">
@@ -14,6 +16,19 @@
     <body>
       <h1>Blogs</h1>
       <button type="button"><a href="/create">New Blog!</a></button>
+
+      <p> Filter by category: </p>
+    <form name="categoryFrm" action="" method="POST">
+      <select name="filerSelect">
+        <option value="all">All</option>
+        <option value="cars">Cars</option>
+        <option value="day">Day to day</option>
+        <option value="special">Special Occasions</option>
+        <option value="other">Other</option>
+      </select>
+      <input type="submit" name="filerSub" value="Search">
+    </form>
+  </br></br>
 
       <table border="1">
         <tr>
