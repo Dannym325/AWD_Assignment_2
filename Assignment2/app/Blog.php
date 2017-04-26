@@ -11,5 +11,6 @@ class Blog extends Authenticatable
     public $content;
     public $username;
     public $createdAt;
+    public $categoryID;
 
 }

@@ -35,9 +35,10 @@ class BlogController extends Controller
         $blog->content = $request->content;
         $blog->username = $request->username;
         $blog->createdAt = date("Y-m-d h:i:s");
+        $blog->categoryID = $request->filerSelect; // gets the id out of the select
 
         DB::table('blogs')->insert(
-          ['title' => $blog->title, 'contents' => $blog->content, 'username' => $blog->username, 'created_at' => $blog->createdAt ]
+          ['title' => $blog->title, 'contents' => $blog->content, 'username' => $blog->username, 'created_at' => $blog->createdAt, 'categoryID' => $blog->categoryID ]
         );
 
         return back();  // redirect to the main blogs page?

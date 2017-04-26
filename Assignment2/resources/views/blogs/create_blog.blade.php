@@ -18,7 +18,14 @@
         <p>Title:</p><input type="text" name="title">
         <p>Content:</p><input type="text" name="content">
         <p>Category:</p>
-        <p> Username: (auto) </p><input type="text" name="username"> <!-- delete this when can enter user session -->
+        <p>Username: (auto) </p><input type="text" name="username"> <!-- delete this when can enter user session -->
+        <p>Category:</p>
+        <select name="filerSelect">
+          <option value="1">Cars</option>
+          <option value="2">Day to day</option>
+          <option value="3">Special Occasions</option>
+          <option value="4">Other</option>
+        </select>
         <input type="submit" name="createBlogSub" value="Add">
       </form>
     </body>

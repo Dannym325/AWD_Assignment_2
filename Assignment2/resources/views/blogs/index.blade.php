@@ -21,10 +21,10 @@
     <form name="categoryFrm" action="" method="POST">
       <select name="filerSelect">
         <option value="all">All</option>
-        <option value="cars">Cars</option>
-        <option value="day">Day to day</option>
-        <option value="special">Special Occasions</option>
-        <option value="other">Other</option>
+        <option value="1">Cars</option>
+        <option value="2">Day to day</option>
+        <option value="3">Special Occasions</option>
+        <option value="4">Other</option>
       </select>
       <input type="submit" name="filerSub" value="Search">
     </form>
