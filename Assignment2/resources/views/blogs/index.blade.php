@@ -13,10 +13,11 @@
     </head>
     <body>
       <h1>Blogs</h1>
+      <button type="button"><a href="/create">New Blog!</a></button>
 
       <table border="1">
         <tr>
-          <th>ID </th> <!-- This can be deleted -->
+          <th>ID </th> <!-- This can be deleted (or hidden )-->
           <th>Title</th>
           <th>Content</th>
           <th>User</th>
@@ -31,8 +32,8 @@
               <td> {{ $blog->title }} </td>
               <td> {{ $blog->contents }} </td>
               <td> {{ $blog->username }} </td>
-              <td> <p>View</p> </td>
-              <td> <p>Edit</p> </td>
+              <td> <a href="blogs/{{ $blog->id }}"> View </a> </td>
+              <td> <a href="blogs/{{ $blog->id }}/edit"> Edit </a> </td>
               <td> <a href="/blogs/{{ $blog->id }}/delete"> Delete </a> </td>
           </tr>
 

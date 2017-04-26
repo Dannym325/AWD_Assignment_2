@@ -15,6 +15,18 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('/create', function () {
+  return view('blogs/create_blog');
+});
+
 Route::get('blogs', 'BlogController@index');
 
 Route::get('blogs/{blog}/delete', 'BlogController@delete');
+
+Route::get('blogs/{blog}/edit', 'BlogController@edit');
+
+Route::post('/create/new', 'BlogController@create');
+
+Route::get('blogs/{blog}', 'BlogController@show');
+
+Route::patch('blogs/{blog}', 'BlogController@update');
