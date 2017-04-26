@@ -30,3 +30,5 @@ Route::post('/create/new', 'BlogController@create');
 Route::get('blogs/{blog}', 'BlogController@show');
 
 Route::patch('blogs/{blog}', 'BlogController@update');
+
+Route::post('/filter', 'BlogController@filter');
