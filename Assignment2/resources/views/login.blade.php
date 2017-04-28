@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Log in</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <title>Log in</title>
 
-    </head>
-    <body>
-      <form name="loginFrm" action="/login" method="POST">
-        <p>Username:</p><input type="text" name="username">
-        <p>Password:</p><input type="password" name="password">
-        <input type="hidden" name="_token" value="{{{ csrf_token() }}}" /> <!-- WHY? -->
-        <input type="submit" name="loginSubmit" value="Log In">
-      </form>
-    </body>
+</head>
+<body>
+
+  @if($errors->any())
+  <h4>{{$errors->first()}}</h4>
+  @endif
+
+  <div class="container">
+    <h2>Please log in:</h2>
+    <form name="loginFrm" action="/login" method="POST">
+      <div class="form-group">
+        <p>Username:</p><input type="text" class="form-control" name="username" placeholder="Enter E-Mail">
+      </div>
+      <div class="form-group">
+        <p>Password:</p><input type="password" class="form-control" name="password" placeholder="Enter Password">
+      </div>
+      <input type="hidden" name="_token" value="{{{ csrf_token() }}}" /> <!-- WHY? -->
+      <input type="submit" name="loginSubmit" value="Log In">
+    </form>
+  </div>
+</body>
 </html>

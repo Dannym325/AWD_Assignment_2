@@ -6,6 +6,7 @@ use App\Blog;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -14,22 +15,21 @@ class UserController extends Controller
       return view('blogs');
     }
 
-    public function login()
-    {
-      return null;
-    }
-
     public function login(Request $request)
     {
       $email = $request->username;
       $password = $request->password;
 
-      $user = DB::table('users')
-                ->select(DB::raw('id, first_name, last_name, email, COUNT(*) AS user_count'))
-                ->where([['email', '=', $email)],['password', '=', $password]])
-                ->get();
+      $user = DB::table('users')->where('email', $email)->first();
 
-      return $user;
+      if (!empty($user)) {
+        if($user->password == $password) {
+          return Redirect::action('BlogController@index'); // user has provided the correct details
+        } else {
+          //return view('login')->with('message', 'Login Failed');
+          return Redirect::back()->withErrors(['Login Failed. Please try again.']);
+        }
+      }
     }
 
 }
