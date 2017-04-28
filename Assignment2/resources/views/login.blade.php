@@ -12,9 +12,10 @@
 
     </head>
     <body>
-      <form name="loginFrm" action="" method="POST">
+      <form name="loginFrm" action="/login" method="POST">
         <p>Username:</p><input type="text" name="username">
         <p>Password:</p><input type="password" name="password">
+        <input type="hidden" name="_token" value="{{{ csrf_token() }}}" /> <!-- WHY? -->
         <input type="submit" name="loginSubmit" value="Log In">
       </form>
     </body>
