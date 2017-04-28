@@ -31,7 +31,7 @@
         <p>Password:</p><input type="password" class="form-control" name="password" placeholder="Enter Password">
       </div>
       <input type="hidden" name="_token" value="{{{ csrf_token() }}}" /> <!-- WHY? -->
-      <input type="submit" name="loginSubmit" value="Log In">
+      <input type="submit" name="loginSubmit" class="btn btn-default" value="Log In">
     </form>
   </div>
 </body>
