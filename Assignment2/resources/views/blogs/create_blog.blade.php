@@ -34,8 +34,6 @@ window.location.href = '{{url("/logout")}}';
         </br>
         <p>Content:</p><input type="text" class="form-control" name="content">
       </br>
-        <p>Username: (auto) </p><input type="text" class="form-control" name="username"> <!-- delete this when can enter user session -->
-      </br>
         <p>Category:</p>
         <select name="filerSelect" class="form-control">
           <option value="1">Cars</option>

@@ -6,6 +6,7 @@ use App\Blog;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Session;
 
 class BlogController extends Controller
 {
@@ -33,7 +34,7 @@ class BlogController extends Controller
 
         $blog->title = $request->title;
         $blog->content = $request->content;
-        $blog->username = $request->username;
+        $blog->username = Session::get('name');
         $blog->createdAt = date("Y-m-d h:i:s");
         $blog->categoryID = $request->filerSelect; // gets the id out of the select
 
