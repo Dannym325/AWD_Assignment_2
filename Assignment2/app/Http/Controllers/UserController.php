@@ -7,6 +7,7 @@ use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
+use Session;
 
 class UserController extends Controller
 {
@@ -24,6 +25,7 @@ class UserController extends Controller
 
       if (!empty($user)) {
         if($user->password == $password) {
+          Session::put('name', $user->first_name);
           return Redirect::action('BlogController@index'); // user has provided the correct details
         } else {
           //return view('login')->with('message', 'Login Failed');

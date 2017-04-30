@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <!-- view.blade.php -->
+
+@if (Session::has('name'))
+<!-- Session variable is there -->
+@else
+<script>
+window.location.href = '{{url("/logout")}}';
+</script>
+@endif
+
 <html lang="{{ config('app.locale') }}">
   <head>
         <meta charset="utf-8">

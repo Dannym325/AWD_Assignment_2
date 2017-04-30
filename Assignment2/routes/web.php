@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('/logout', function () {
+    return view('login');
+});
+
 Route::get('/create', function () {
   return view('blogs/create_blog');
 });
