@@ -17,11 +17,12 @@
 </head>
 <body>
 
-  @if($errors->any())
-  <h4>{{$errors->first()}}</h4>
-  @endif
-
   <div class="container">
+
+    @if($errors->any())
+    <h4>{{$errors->first()}}</h4>
+    @endif
+
     <h2>Please log in:</h2>
     <form name="loginFrm" action="/login" method="POST">
       <div class="form-group">
